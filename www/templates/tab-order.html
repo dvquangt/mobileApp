@@ -1,0 +1,12 @@
+
+<ion-view view-title="KSVC DASHBOARD">
+  <ion-content ng-controller='homeCtrl'>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="order in orders" type="item-text-wrap" href="#/tab/order-detail/{{order.id}}">
+        <h2>{{order.CustomerName}}</h2>
+        <p>{{order.ProductName}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

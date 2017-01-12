@@ -1,5 +1,6 @@
 myService
-.factory('home', function() {
+.factory('home', function($http) {
+	
   var orders = [{
 		id : 1,
 		CustomerName: 'Duong Van Quang',
@@ -24,7 +25,10 @@ myService
 
   return {
     getAll: function() {
-      return orders;
+      $http.get("/#/getOrder").success(function(data, status) {
+        console.log(JSON.stringify(data));
+      });
+		  return orders;
     },
     remove: function(order) {
       orders.splice(orders.indexOf(order), 1);
